@@ -1,0 +1,782 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Edbert Tan</title>
+<link rel="stylesheet" href="./collapzion.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="./collapzion.min.js"></script>
+
+<style>
+.mySlides0 {display: none}
+.mySlides1 {display: none}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Slideshow container1 */
+.slideshow-container1 {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot0 {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot0:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* The dots/bullets/indicators */
+.dot1 {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot1:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade1 {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+.header h2 {
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+  position: absolute;
+            bottom: 0px;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #04AA6D;
+  width: 0%;
+}
+
+.content {
+  padding: 100px 0;
+  margin: -30px auto 0 auto;
+  width: 80%;
+}
+
+img.wrap {
+	float: left;
+	padding-right:20px;
+	padding-bottom:20px;
+}
+
+img.clear {
+	clear: both;
+	
+	width: 98%;
+    margin: auto;
+    display: block;	
+}
+
+.container2 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-size:16px;
+}
+
+div.scroll {
+  background-color:#ffffff;
+  width: 98%;
+  height: 410px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: left;
+  padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.left {
+  padding: 20px;
+  float: left;
+  width: 50%; /* The width is 20%, by default */
+}
+
+.right {
+  padding: 20px;
+  float: left;
+  width: 50%; /* The width is 20%, by default */
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+	
+  }
+}
+
+body { font-family:'Roboto';}
+
+h1 { margin:70px auto; text-align:center}
+	
+.button1 {
+    background-color:#6a0a23;
+    color: #fff;
+    border:none; 
+    border-radius:10px; 
+    padding:15px;
+    min-height:30px; 
+    min-width: 120px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+  }	
+	
+.button1:hover {
+      background-color:#002ead;
+      transition: 0.7s;
+}	
+	
+.button1:focus {
+    outline-color: transparent;
+    outline-style:solid;
+    box-shadow: 0 0 0 4px #5a01a7;
+    transition: 0.7s;
+}
+
+.button1:active {
+    background-color: #ffbf00;
+}
+
+</style>
+
+</head>
+
+
+
+<body style="background-color:#009688;">
+
+<!-- /////////////////////////////// CODE CHALLENGE NO 1 AND 6 //////////////////////////////////////////// -->
+
+<div id="a1" style="padding-top:30px;width:80%;height:500px;text-align:center;max-height:100%;background-image:url('office5.png');background-size:100% 100%;">>
+	<h1 style="color:#2F63FF;margin-top:-30px;">Edbert Tan - NO 2702357996</h1>
+	<h2 style="color:#2F63FF;margin-top:-60px;">BINUS INTERNATIONAL UNIVERSITY STUDENT</h2>
+
+    <img src="photo2.png" style="width:auto;margin-top:-95px;height:auto;display:block;margin-left:auto;margin-right: auto;"/>
+</div>
+
+<!-- /////////////////////////////// CODE CHALLENGE NO 4 //////////////////////////////////////////// -->
+
+<div id="a2" style="display:none;padding-top:30px;width:80%;height:500px;background:#aabbcc;">
+	<div class="header">
+		<h2>Contact Me</h2>
+	</div>
+
+
+	<div class="container2" style="margin-top:50px;">
+  
+		<form action="/action_page.php" onsubmit="myFunction2()">  
+			<label for="fname">Name</label><br>
+			<input type="text" id="fname" name="firstname" style="font-size:16px;width:98%" placeholder="Your name..">
+			<br><br>
+
+			<label for="lname">Email</label><br>
+			<input type="text" placeholder="Enter Email" style="font-size:16px;width:98%" name="email" onfocusout="cekemail()" id="email" required>
+			<br><br>
+	
+			<label for="subject">Subject</label><br>
+			<textarea id="subject" name="subject" placeholder="Write something.." rows="6" style="font-size:16px;width:98%;"></textarea>
+			<br><br>
+
+			<input type="submit" value="Submit" style="font-size:16px;height:30px;width:100px;">
+		</form>
+	</div>
+</div>
+
+<div id="a3" style="display:none;padding-top:30px;width:85%;max-height:100%;">
+	<div class="header">
+		<h2>My Resume</h2>
+	</div>
+
+	<br><br>
+
+	<div class="left" style="color:black;background-color:#aabbcc;height:450px;">
+		<p style="font-size:20px;padding-left:10px;"><b>About Me</b></p>
+				
+		<div style="font-size:16px;padding-left:10px;">	
+			Hello I'm Edbert Tan. I like games and Programming.<br>
+			Making webs is my favorite too.<br>
+			It is fun to learn that so much we can do with computers.
+		</div>	
+				
+		<p style="font-size:20px;padding-left:10px;"><b>Bio</b></p>
+
+		<div style="font-size:16px;padding-left:10px;">	
+			<table>
+				<tr>
+					<td><b>Name</b></td>
+					<td style="padding-left:10px;">Edbert Tan</td>
+				</tr>
+				<tr>
+					<td><b>Age</b></td>
+					<td style="padding-left:10px;">20</td>
+				</tr>
+				<tr>
+					<td><b>Email</b></td>
+					<td style="padding-left:10px;">3dberttan@gmail.com</td>
+				</tr>
+				<tr>
+					<td><b>Phone</b></td>
+					<td style="padding-left:10px;">+62-8129303333</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<div class="right" style="background-color:green;height:450px;">
+		<p style="font-size:20px;padding-left:10px;"><b>Professional Skills</b></p>
+
+		<div style="font-size:16px;padding-left:10px;">	
+			<table>
+				<tr>
+					<td>HTML</td>
+					<td style="background:grey;width:190px;color:black;">
+						<div id="box1" style="background:#98bf21;height:20px;width:92px;margin:6px;">48%</div>
+					</td>
+				</tr>
+				<tr>
+					<td>CSS</td>
+					<td style="background:grey;width:190px;color:black;">
+						<div id="box2" style="background:#98bf21;height:20px;width:92px;margin:6px;">48%</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Javascript</td>
+					<td style="background:grey;width:190px;color:black;">
+						<div id="box3" style="background:#98bf21;height:20px;width:115px;margin:6px;">60%</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Photoshop</td>
+					<td style="background:grey;width:190px;color:black;">
+						<div id="box4" style="background:#98bf21;height:20px;width:133px;margin:6px;">70%</div>
+					</td>
+				</tr>
+				<tr>
+					<td>Python</td>
+					<td style="background:grey;width:190px;color:black;">
+						<div id="box5" style="background:#98bf21;height:20px;width:171px;margin:6px;">90%</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<!-- /////////////////////////////// CODE CHALLENGE NO 3 //////////////////////////////////////////// -->
+
+<div id="a4" style="display:none;padding-left:5px;padding-top:10px;width:85%;max-height:100%;">
+	<div class="header">
+		<h2>My Projects</h2>
+	</div>
+
+	<br><br>
+
+	<div class="left" style="color:black;background-color:#aabbcc;height:450px;">
+		<div style="border:2px solid;padding:10px;margin-top:12px;height:180px;">
+			<img id="imgid1" class="wrap" src="images\calendar3.jpg" alt="My Daily Planner" style="width:200px">
+			<p>My Daily Planner</p>
+		</div>
+
+		<br>
+		
+		<div style="clear:both;border:2px solid;padding:10px;height:180px;">
+			<img id="imgid2" class="wrap" src="images\games4.jpg" alt="Sea Rescue" style="width:200px">
+			<p>Sea Rescue Game</p>
+		</div>
+	</div>
+
+	<div class="right" style="background-color:green;height:450px;">
+		<p id="ptext" style="color:white;margin-top:20px;text-align:center;">
+			Please click on the project picture to get details<br><br>
+			( make sure you put down the menu before proceeding )
+		</p>
+
+		<div class="scroll" id="project1" style="display:none;">
+			<center><h1 style="margin-top:-10px;">My Daily Planner</h1></center>
+		
+			<p style="margin-top:-20px;"><center>This is my first HTML project.
+			My Daily Planner is a fully working calendar</center></p> 
+
+			<center><b>It has a Monthly View</b></center></br>
+
+			<img  class="clear" src="images\calendar3.jpg" alt="My Daily Planner">
+
+			<p style="margin-top:-30px;"><center><b>And a Weekly View</b></center></br></p>
+		
+			<img  class="clear" src="images\calweek.jpg" alt="My Daily Planner"><br>
+		
+			<center>The reminder can appear every set amount of days, weeks, months or years</center></br>
+
+			<center>The user can pick colors for text color and background color to enhance the reminder</center></br>
+
+			<center><b>Input page</b></center></br>
+		
+			<img  class="clear" src="images\calinput.jpg" alt="My Daily Planner"><br>
+		
+			<center>Beside reminders, <b>There is also a to do list</b></center></br>
+		
+			<img  class="clear" src="images\caltodo.jpg" alt="My Daily Planner">
+
+			<br><center>This project is really challenging as I needed to browse and learn a lot of javascript
+			code. However after finishing the project it really gave a satisfying feeling. And after
+			this project I knew much more on javascipt, html and css than before</center>
+			
+		</div>
+
+
+		<div class="scroll" id="project2" style="display:none;">
+			<center><h1 style="margin-top:-10px;">Sea Rescue</h1></center>
+		
+			<p style="margin-top:-20px;"><center>This is my first Python project</center></p> 
+
+			<center><b>The Game is about a Ship Wrecked in the deep ocean and needs help to be Rescued</b></center></br>
+
+			<img class="wrap" src="images\game6.jpg" alt="sea rescue" style="width:450px">
+
+			<center><b>To help the drowning people, We have to pass The Sea Creatures obstacle</b></center></br>
+
+			<img class="wrap" src="images\games4.jpg" alt="photoshop" style="width:450px">
+
+			<center><b>If We get caught, the game stops and we lose</b></center></br>
+
+			<img  class="wrap" src="images\game5.jpg" alt="Sea Rescue" style="width:200px">
+
+			<br><center>This project used a lot of coding in python and pygame. 
+			However Pygame makes building the project easier</center>
+			
+		</div>
+	</div>
+</div>
+
+<!-- /////////////////////////////// CODE CHALLENGE NO 5 //////////////////////////////////////////// -->
+
+<div id="a5" style="display:none;padding-left:5px;padding-top:10px;width:85%;max-height:100%;">
+	<div class="header">
+		<h2>My Skills</h2>
+
+		<div class="progress-container">
+			<div class="progress-bar" id="myBar"></div>
+		</div>  
+	</div>
+
+	<div class="content">
+		<div>
+			<img class="wrap" src="images\game2.jpg" alt="photoshop" style="width:450px">
+				
+			<p style="font-size:24px;">
+			I love Photoshop. Photoshop offers a comprehensive set of features and tools
+			for image editing, including advanced selection and masking tools, layer styles,
+			filters, color correction, and more. Its capabilities extend beyond basic photo
+			editing to graphic design and digital art creation. And it is easy to learn.
+			</p>
+		</div>
+				
+		<br>
+
+		<div style="clear:both;">
+			<img class="wrap" src="images\piano3.jpg" alt="piano" style="width:450px">
+
+			<p style="font-size:24px;">
+			I love Music. Music makes me calm. Music is very central to our lives and brings us all
+			so much happiness. It can give us an emotional and creative outlet. Playing an instrument
+			is an excellent source of pleasure and fulfilment and it can also provide a deep sense of satisfaction.
+			</p>
+		</div>
+	</div>
+	
+	<script>
+		$('#imgid1').click(function () {
+			gantib(1);
+		});
+
+		$('#imgid2').click(function () {
+		  gantib(2);
+		});
+	</script>
+
+	<script>
+// When the user scrolls the page, execute myFunction 
+		window.onscroll = function() {myFunction()};
+
+		function myFunction() {
+			var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+			var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			var scrolled = (winScroll / height) * 100;
+			document.getElementById("myBar").style.width = scrolled + "%";
+		}
+	</script>
+	
+</div>
+
+<!-- /////////////////////////////// CODE CHALLENGE NO 2 //////////////////////////////////////////// -->
+
+
+<div id="a6" style="display:none;padding-top:30px;width:80%;height:500px;background:#aabbcc;">
+	<div class="header">
+		<h2>Testimony</h2>
+	</div>
+
+	<div class="slideshow-container">
+		<div class="mySlides0 fade">
+			<img src="images/testi1.jpg" style="height:400px;width:100%">
+		</div>
+
+		<div class="mySlides0 fade">
+			<img src="images/testi2.jpg" style="height:400px;width:100%">
+		</div>
+
+		<div class="mySlides0 fade">
+			<img src="images/testi3.jpg" style="height:400px;width:100%">
+		</div>
+
+
+		<a class="prev" onclick="plusSlides(-1,0)"><</a>
+		<a class="next" onclick="plusSlides(1,0)">></a>
+
+	</div>
+	<br>
+
+	<div style="text-align:center">
+		<span class="dot0" onclick="currentSlide(1,0)"></span> 
+		<span class="dot0" onclick="currentSlide(2,0)"></span> 
+		<span class="dot0" onclick="currentSlide(3,0)"></span> 
+	</div>
+</div>
+
+
+	
+</div>
+</div>
+
+<div id="btncollapzion" style="color:black;font-weight:500;font-size:20px;" class="btn_collapzion"></div>
+		
+<script>
+
+jQuery(function($){
+	$('#btncollapzion').Collapzion({
+        _child_attribute:[
+           	{
+                'label':'My Skills',
+                'url':'javascript:gantia(5)',
+                'icon':'&#xE150;'
+           	},
+           	{
+                'label':'My Projects',
+                'url':'javascript:gantia(4)',
+                'icon':'&#xE150;'
+           	},
+           	{
+				'label':'My Resume',
+		        'url':'javascript:gantia(3)',
+		        'icon':'&#xE873;'
+	        },
+	        {
+				'label':'Testimony',
+		        'url':'javascript:gantia(6)',
+		        'icon':'&#xE873;'
+	        },
+	        {
+		        'label':'Contact Me',
+				'url':'javascript:gantia(2)',
+				'icon':'&#xE7FD;'
+	        },
+	        {
+				'label':'Home',
+		        'url':'javascript:gantia(1)',
+		        'icon':'&#xf015;'
+	        },
+	    ],
+	    _main_btn_color:'#4285f4;',
+	    _child_btn_color:'#f4645f;',
+				
+    });
+});
+		
+function gantia(ntype) {
+
+switch (ntype) {
+  case 6:
+	$(function() {
+		$("#a5").hide();
+		$("#a4").hide();
+		$("#a3").hide();
+		$("#a2").hide();
+		$("#a1").hide();
+		$("#a6").toggle(500);
+	});
+    break;
+  case 5:
+	$(function() {
+		$("#a6").hide();
+		$("#a4").hide();
+		$("#a3").hide();
+		$("#a2").hide();
+		$("#a1").hide();
+		$("#a5").toggle(500);
+	});
+    break;
+  case 4:
+	$(function() {
+		$("#a6").hide();
+		$("#a5").hide();
+		$("#a3").hide();
+		$("#a2").hide();
+		$("#a1").hide();
+		$("#a4").toggle(500);
+	});
+    break;
+  case 3: // home
+	$(function() {
+		$("#a6").hide();
+		$("#a5").hide();
+		$("#a4").hide();
+		$("#a2").hide();
+		$("#a1").hide();
+		$("#a3").toggle(500);
+	});
+    break;
+  case 2:
+	$(function() {
+		$("#a6").hide();
+		$("#a5").hide();
+		$("#a4").hide();
+		$("#a3").hide();
+		$("#a1").hide();
+		$("#a2").toggle(500);
+	});
+    break;
+  case 1: // home
+	$(function() {
+		$("#a6").hide();
+		$("#a5").hide();
+		$("#a4").hide();
+		$("#a3").hide();
+		$("#a2").hide();
+		$("#a1").toggle(500);
+	});
+    break;
+}
+}
+
+function gantib(ntype) {
+
+document.getElementById("ptext").style.display="none";
+
+
+switch (ntype) {
+  
+  case 1:
+	$(function() {
+		$("#project2").hide();
+		$("#project1").toggle(500);
+	});
+    break;
+  case 2:
+	$(function() {
+		$("#project1").hide();
+		$("#project2").toggle(500);
+	});
+    break;
+}
+}
+
+function cekemail() {
+
+  let x = document.getElementById("email");
+//  x.value = x.value.toUpperCase();
+
+  var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  if(!regex.test(x.value)) {
+	alert("Wrong Email Format");
+	x.value="";	
+  }
+}
+
+function myFunction2() {
+  alert("The form was submitted");
+}
+
+const slindex = [];
+slindex[0]= 1;
+slindex[1]= 1;
+// slindex[2]= 3;
+
+// let slideIndex = 1;
+// showSlides(slideIndex);
+showSlides(slindex[0],0);
+showSlides(slindex[1],1);
+// showSlides(slindex[0],1);
+
+function plusSlides(n,ngroup) {
+//  showSlides(slideIndex += n);
+	slindex[ngroup] += n;
+	showSlides(slindex[ngroup],ngroup);
+}
+
+function currentSlide(n,ngroup) {
+//  showSlides(slideIndex = n);
+	slindex[ngroup] = n
+	showSlides(slindex[ngroup],ngroup);
+}
+
+function showSlides(n,ngroup) {
+  let i;
+
+  
+  if (ngroup==0) {
+	let slides = document.getElementsByClassName("mySlides0");
+	let dots = document.getElementsByClassName("dot0");
+	
+    if (n > slides.length) {slindex[ngroup] = 1}    
+
+    if (n < 1) {slindex[ngroup] = slides.length}
+
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+  
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    slides[slindex[ngroup]-1].style.display = "block";  
+    dots[slindex[ngroup]-1].className += " active";
+  } else {
+  
+	let slides1 = document.getElementsByClassName("mySlides1");
+	let dots1 = document.getElementsByClassName("dot1");
+	
+    if (n > slides1.length) {slindex[ngroup] = 1}    
+
+    if (n < 1) {slindex[ngroup] = slides1.length}
+
+
+    for (i = 0; i < slides1.length; i++) {
+        slides1[i].style.display = "none";  
+    }
+
+    slides1[slindex[ngroup]-1].style.display = "block"; 
+  
+    for (i = 0; i < dots1.length; i++) {
+      dots1[i].className = dots1[i].className.replace(" active", "");
+    }
+
+    dots1[slindex[ngroup]-1].className += " active";
+	
+  }  
+	
+  
+}
+</script>
+
+</body>
+
+</html>
+
